@@ -13,8 +13,8 @@ public class ObstaclePool : MonoBehaviour
     private GameObject[] columns;                                    //Collection of pooled columns.
     private int currentColumn = 0;                                    //Index of the current column in the collection.
 
-    private Vector2 objectPoolPosition = new Vector2(-15, -25);        //A holding position for our unused columns offscreen.
-    private float spawnYPosition = 10f;
+    private Vector3 objectPoolPosition = new Vector3(-1.75f, 13, 7.24f);        //A holding position for our unused columns offscreen.
+    private float spawnYPosition = 13f;
 
     private float timeSinceLastSpawned;
 
@@ -47,7 +47,7 @@ public class ObstaclePool : MonoBehaviour
             float spawnXPosition = Random.Range(columnMin, columnMax);
 
             //...then set the current column to that position.
-            columns[currentColumn].transform.position = new Vector2(spawnXPosition, spawnYPosition);
+            columns[currentColumn].transform.position = new Vector3(spawnXPosition, spawnYPosition, 7.24f);
 
             //Increase the value of currentColumn. If the new size is too big, set it back to zero
             currentColumn++;
